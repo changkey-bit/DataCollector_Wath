@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.wear.widget.BoxInsetLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="150dp"
+        android:layout_height="120dp"
+        android:background="@drawable/half_white_background2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="25dp"
+
+        >
+
+        <!-- 메시지 텍스트 뷰 -->
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Validation Text"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="0dp">
+
+            <!-- "예" 버튼 -->
+            <Button
+                android:id="@+id/button_yes"
+                android:layout_width="60dp"
+                android:textSize="12sp"
+                android:layout_height="match_parent"
+                android:backgroundTint="#696969"
+                android:text="예"
+                android:layout_marginStart="10dp"
+                />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+            <!-- "아니오" 버튼 -->
+            <Button
+                android:id="@+id/button_no"
+                android:layout_width="60dp"
+                android:textSize="12sp"
+                android:layout_height="match_parent"
+                android:backgroundTint="#696969"
+                android:text="아니오"
+                android:layout_marginEnd="10dp"
+                />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.wear.widget.BoxInsetLayout>

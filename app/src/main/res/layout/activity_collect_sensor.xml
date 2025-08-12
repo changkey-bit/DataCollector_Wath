@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="0dp">
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/background" />
+
+    <LinearLayout
+        android:id="@+id/blank_top"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="@drawable/half_white_background_rec2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- IMU Sensors Section -->
+    <TextView
+        android:id="@+id/sensor_text_imu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="IMU Sensors"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+
+        app:layout_constraintTop_toBottomOf="@+id/blank_top"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="10dp"/>
+
+    <View
+        android:id="@+id/line_1"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="#736A62"
+        app:layout_constraintTop_toBottomOf="@id/sensor_text_imu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.9"
+        android:layout_marginTop="0dp" />
+
+    <TextView
+        android:id="@+id/text_accelerometer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Accelerometer"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/sensor_text_imu"
+        app:layout_constraintEnd_toStartOf="@id/switch_accelerometer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.7"
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="40dp"
+        />
+
+    <Switch android:id="@+id/switch_accelerometer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:scaleX="1.2"
+        android:scaleY="1.2"
+        app:layout_constraintBottom_toBottomOf="@id/text_accelerometer"
+        app:layout_constraintStart_toEndOf="@id/text_accelerometer"
+        app:layout_constraintTop_toTopOf="@id/text_accelerometer"
+        android:layout_marginStart="0dp" />
+
+    <TextView
+        android:id="@+id/text_gyroscope"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Gyroscope"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@id/switch_gyroscope"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_accelerometer"
+        app:layout_constraintWidth_percent="0.7"
+        android:layout_marginLeft="40dp"
+        />
+
+    <Switch android:id="@+id/switch_gyroscope"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:checked="true"
+        android:scaleX="1.2"
+        android:scaleY="1.2"
+        app:layout_constraintBottom_toBottomOf="@id/text_gyroscope"
+        app:layout_constraintStart_toEndOf="@id/text_gyroscope"
+        app:layout_constraintTop_toTopOf="@id/text_gyroscope" />
+
+    <TextView
+        android:id="@+id/text_magnetometer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Magnetometer"
+        android:textSize="12sp"
+        android:layout_marginLeft="40dp"
+        app:layout_constraintEnd_toStartOf="@id/switch_magnetometer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_gyroscope"
+        app:layout_constraintWidth_percent="0.7" />
+
+    <Switch android:id="@+id/switch_magnetometer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:checked="true"
+        android:scaleX="1.2"
+        android:scaleY="1.2"
+        app:layout_constraintBottom_toBottomOf="@id/text_magnetometer"
+        app:layout_constraintStart_toEndOf="@id/text_magnetometer"
+        app:layout_constraintTop_toTopOf="@id/text_magnetometer" />
+
+    <TextView
+        android:id="@+id/text_gravity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Gravity"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/text_magnetometer"
+        app:layout_constraintEnd_toStartOf="@id/switch_gravity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.7"
+        android:layout_marginLeft="40dp" />
+
+    <Switch android:id="@+id/switch_gravity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:scaleX="1.2"
+        android:scaleY="1.2"
+        app:layout_constraintBottom_toBottomOf="@id/text_gravity"
+        app:layout_constraintStart_toEndOf="@id/text_gravity"
+        app:layout_constraintTop_toTopOf="@id/text_gravity" />
+
+    <!-- ROTATION_VECTOR Sensor -->
+    <TextView
+        android:id="@+id/text_rotation_vector"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Rotation Vector"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/text_gravity"
+        app:layout_constraintEnd_toStartOf="@id/switch_rotation_vector"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.7"
+        android:layout_marginLeft="40dp" />
+
+    <Switch android:id="@+id/switch_rotation_vector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:scaleX="1.2"
+        android:scaleY="1.2"
+        app:layout_constraintBottom_toBottomOf="@id/text_rotation_vector"
+        app:layout_constraintStart_toEndOf="@id/text_rotation_vector"
+        app:layout_constraintTop_toTopOf="@id/text_rotation_vector" />
+
+    <!-- SIGNIFICANT_MOTION Sensor -->
+    <TextView
+        android:id="@+id/text_significant_motion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Significant Motion"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/text_rotation_vector"
+        app:layout_constraintEnd_toStartOf="@id/switch_significant_motion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.7"
+        android:layout_marginLeft="40dp" />
+
+    <Switch android:id="@+id/switch_significant_motion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:scaleX="1.2"
+        android:scaleY="1.2"
+        app:layout_constraintBottom_toBottomOf="@id/text_significant_motion"
+        app:layout_constraintStart_toEndOf="@id/text_significant_motion"
+        app:layout_constraintTop_toTopOf="@id/text_significant_motion" />
+
+    <!-- STEP_COUNTER Sensor -->
+    <TextView
+        android:id="@+id/text_step_counter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Step Counter"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/text_significant_motion"
+        app:layout_constraintEnd_toStartOf="@id/switch_step_counter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.7"
+        android:layout_marginLeft="40dp" />
+
+    <Switch android:id="@+id/switch_step_counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:scaleX="1.2"
+        android:scaleY="1.2"
+        app:layout_constraintBottom_toBottomOf="@id/text_step_counter"
+        app:layout_constraintStart_toEndOf="@id/text_step_counter"
+        app:layout_constraintTop_toTopOf="@id/text_step_counter" />
+
+    <!-- STEP_DETECTOR Sensor -->
+    <TextView
+        android:id="@+id/text_step_detector"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Step Detector"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/text_step_counter"
+        app:layout_constraintEnd_toStartOf="@id/switch_step_detector"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.7"
+        android:layout_marginLeft="40dp" />
+
+    <Switch android:id="@+id/switch_step_detector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:scaleX="1.2"
+        android:scaleY="1.2"
+        app:layout_constraintBottom_toBottomOf="@id/text_step_detector"
+        app:layout_constraintStart_toEndOf="@id/text_step_detector"
+        app:layout_constraintTop_toTopOf="@id/text_step_detector" />
+
+    <!-- PROXIMITY Sensor -->
+    <TextView
+        android:id="@+id/text_proximity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Proximity"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/text_step_detector"
+        app:layout_constraintEnd_toStartOf="@id/switch_proximity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.7"
+        android:layout_marginLeft="40dp" />
+
+    <Switch android:id="@+id/switch_proximity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:scaleX="1.2"
+        android:scaleY="1.2"
+        app:layout_constraintBottom_toBottomOf="@id/text_proximity"
+        app:layout_constraintStart_toEndOf="@id/text_proximity"
+        app:layout_constraintTop_toTopOf="@id/text_proximity" />
+
+    <!-- AMBIENT_TEMPERATURE Sensor -->
+    <TextView
+        android:id="@+id/text_ambient_temperature"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Ambient Temperature"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/text_proximity"
+        app:layout_constraintEnd_toStartOf="@id/switch_ambient_temperature"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.7"
+        android:layout_marginLeft="40dp" />
+
+    <Switch android:id="@+id/switch_ambient_temperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:scaleX="1.2"
+        android:scaleY="1.2"
+        app:layout_constraintBottom_toBottomOf="@id/text_ambient_temperature"
+        app:layout_constraintStart_toEndOf="@id/text_ambient_temperature"
+        app:layout_constraintTop_toTopOf="@id/text_ambient_temperature" />
+
+    <!-- LIGHT Sensor -->
+    <TextView
+        android:id="@+id/text_light"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Light"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/text_ambient_temperature"
+        app:layout_constraintEnd_toStartOf="@id/switch_light"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.7"
+        android:layout_marginLeft="40dp" />
+
+    <Switch android:id="@+id/switch_light"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:scaleX="1.2"
+        android:scaleY="1.2"
+        app:layout_constraintBottom_toBottomOf="@id/text_light"
+        app:layout_constraintStart_toEndOf="@id/text_light"
+        app:layout_constraintTop_toTopOf="@id/text_light" />
+
+    <!-- PRESSURE Sensor -->
+    <TextView
+        android:id="@+id/text_pressure"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Pressure"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/text_light"
+        app:layout_constraintEnd_toStartOf="@id/switch_pressure"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.7"
+        android:layout_marginLeft="40dp" />
+
+    <Switch android:id="@+id/switch_pressure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:scaleX="1.2"
+        android:scaleY="1.2"
+        app:layout_constraintBottom_toBottomOf="@id/text_pressure"
+        app:layout_constraintStart_toEndOf="@id/text_pressure"
+        app:layout_constraintTop_toTopOf="@id/text_pressure" />
+
+    <!-- RELATIVE_HUMIDITY Sensor -->
+    <TextView
+        android:id="@+id/text_relative_humidity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Relative Humidity"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/text_pressure"
+        app:layout_constraintEnd_toStartOf="@id/switch_relative_humidity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.7"
+        android:layout_marginLeft="40dp" />
+
+    <Switch android:id="@+id/switch_relative_humidity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:scaleX="1.2"
+        android:scaleY="1.2"
+        app:layout_constraintBottom_toBottomOf="@id/text_relative_humidity"
+        app:layout_constraintStart_toEndOf="@id/text_relative_humidity"
+        app:layout_constraintTop_toTopOf="@id/text_relative_humidity" />
+
+
+    <!-- Location Sensors Section -->
+    <TextView
+        android:id="@+id/sensor_text_location"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Location Sensors"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/text_relative_humidity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="10dp"/>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="#736A62"
+        app:layout_constraintTop_toBottomOf="@id/sensor_text_location"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.9"
+        android:layout_marginTop="0dp" />
+
+    <TextView
+        android:id="@+id/text_gps"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="GPS"
+        android:textSize="12sp"
+        android:layout_marginLeft="40dp"
+        app:layout_constraintEnd_toStartOf="@id/switch_gps"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sensor_text_location"
+        app:layout_constraintWidth_percent="0.7"
+        android:layout_marginTop="0dp" />
+
+    <Switch android:id="@+id/switch_gps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:scaleX="1.2"
+        android:scaleY="1.2"
+        app:layout_constraintBottom_toBottomOf="@id/text_gps"
+        app:layout_constraintStart_toEndOf="@id/text_gps"
+        app:layout_constraintTop_toTopOf="@id/text_gps" />
+
+    <!-- Voice Sensors Section -->
+    <TextView
+        android:id="@+id/sensor_text_voice"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Voice Sensors"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/text_gps"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="10dp"/>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="#736A62"
+        app:layout_constraintTop_toBottomOf="@id/sensor_text_voice"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.9"
+        android:layout_marginTop="0dp" />
+
+    <TextView
+        android:id="@+id/text_voice"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Voice"
+        android:textSize="12sp"
+        android:layout_marginLeft="40dp"
+        app:layout_constraintEnd_toStartOf="@id/switch_voice"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sensor_text_voice"
+        app:layout_constraintWidth_percent="0.7"
+        android:layout_marginTop="0dp" />
+
+    <Switch android:id="@+id/switch_voice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:scaleX="1.2"
+        android:scaleY="1.2"
+        app:layout_constraintBottom_toBottomOf="@id/text_voice"
+        app:layout_constraintStart_toEndOf="@id/text_voice"
+        app:layout_constraintTop_toTopOf="@id/text_voice" />
+
+    <LinearLayout
+        android:id="@+id/blank_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="@drawable/half_white_background_rec2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
